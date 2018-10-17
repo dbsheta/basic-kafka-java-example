@@ -1,6 +1,8 @@
 package com.dhoomil.kafkabasic;
 
-import org.apache.kafka.clients.producer.*;
+import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.ProducerConfig;
+import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
 
 import java.util.Date;
@@ -15,26 +17,16 @@ public class BasicProducerExample {
         properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
 
         KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
-        BasicCallback basicCallback = new BasicCallback();
+        BasicProducerCallback callback = new BasicProducerCallback();
 
         System.out.println("Sending 1 message every 1 second, for a total of 100 messages:");
         for (int i = 0; i < 100; i++) {
             String message = "Message Number: " + i + " at " + new Date();
             String key = "key" + i;
             ProducerRecord<String, String> record = new ProducerRecord<>("test", key, message);
-            producer.send(record, basicCallback);
+            producer.send(record, callback);
             Thread.sleep(1000L);
         }
         producer.close();
-    }
-
-    private static class BasicCallback implements Callback {
-        public void onCompletion(RecordMetadata recordMetadata, Exception e) {
-            if (e == null) {
-                System.out.println("Message delivered successfully to partition " + recordMetadata.partition());
-            } else {
-                System.out.println("Message delivery failed: " + e.getMessage());
-            }
-        }
     }
 }
