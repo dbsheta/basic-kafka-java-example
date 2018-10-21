@@ -9,10 +9,13 @@ import java.time.Duration;
 import java.util.Collections;
 import java.util.Properties;
 
+import static com.dhoomil.kafkabasic.Constants.SERVERS;
+import static com.dhoomil.kafkabasic.Constants.SINK_TOPIC;
+
 public class BasicConsumerExample {
     public static void main(String[] args) {
         Properties props = new Properties();
-        props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+        props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, SERVERS);
         props.put(ConsumerConfig.GROUP_ID_CONFIG, "test");
         props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "true");
         props.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, "1000");
@@ -21,13 +24,13 @@ public class BasicConsumerExample {
 
         System.out.println("Starting to read new messages from Kafka");
         KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
-        consumer.subscribe(Collections.singleton("test"));
+        consumer.subscribe(Collections.singleton(SINK_TOPIC));
 
         while (true) {
             ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(1000));
 
             for (ConsumerRecord<String, String> record : records)
-                System.out.printf("offset = %d, key = %s, value = %s%n", record.offset(), record.key(), record.value());
+                System.out.printf("partition = %d, key = %s, value = %s%n", record.partition(), record.key(), record.value());
         }
     }
 }
