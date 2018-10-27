@@ -1,0 +1,15 @@
+{
+  "namespace": "com.dhoomil.kafkabasic.avro.model",
+  "name": "Project",
+  "type": "record",
+  "fields": [
+    {
+      "name": "id",
+      "type": "int"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    }
+  ]
+}

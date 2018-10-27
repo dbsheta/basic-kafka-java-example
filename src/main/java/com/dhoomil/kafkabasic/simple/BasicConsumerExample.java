@@ -1,4 +1,4 @@
-package com.dhoomil.kafkabasic;
+package com.dhoomil.kafkabasic.simple;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;

@@ -1,0 +1,16 @@
+com/dhoomil/kafkabasic/avro/SimpleAvroConsumer.class
+com/dhoomil/kafkabasic/avro/model/Project.class
+com/dhoomil/kafkabasic/avro/DataGenerator.class
+com/dhoomil/kafkabasic/DbDataGen.class
+com/dhoomil/kafkabasic/avro/model/Employee$Builder.class
+com/dhoomil/kafkabasic/avro/model/Project$Builder.class
+com/dhoomil/kafkabasic/avro/SimpleAvroProducer.class
+com/dhoomil/kafkabasic/avro/model/Project$1.class
+com/dhoomil/kafkabasic/avro/model/Employee.class
+com/dhoomil/kafkabasic/filesource/FileProducerExample.class
+com/dhoomil/kafkabasic/streams/BasicStreamingExample.class
+com/dhoomil/kafkabasic/BasicProducerCallback.class
+com/dhoomil/kafkabasic/simple/BasicProducerExample.class
+com/dhoomil/kafkabasic/Constants.class
+com/dhoomil/kafkabasic/simple/BasicConsumerExample.class
+com/dhoomil/kafkabasic/avro/model/Employee$1.class

@@ -1,4 +1,4 @@
-package com.dhoomil.kafkabasic;
+package com.dhoomil.kafkabasic.streams;
 
 import org.apache.kafka.common.serialization.Serdes;
 import org.apache.kafka.streams.KafkaStreams;

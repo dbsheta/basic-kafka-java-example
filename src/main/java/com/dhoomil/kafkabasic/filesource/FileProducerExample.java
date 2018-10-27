@@ -1,5 +1,6 @@
-package com.dhoomil.kafkabasic;
+package com.dhoomil.kafkabasic.filesource;
 
+import com.dhoomil.kafkabasic.BasicProducerCallback;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;

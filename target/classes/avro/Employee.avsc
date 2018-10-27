@@ -1,0 +1,39 @@
+{
+  "namespace": "com.dhoomil.kafkabasic.avro.model",
+  "name": "Employee",
+  "type": "record",
+  "fields": [
+    {
+      "name": "id",
+      "type": "int"
+    },
+    {
+      "name": "fname",
+      "type": "string"
+    },
+    {
+      "name": "lname",
+      "type": "string"
+    },
+    {
+      "name": "dateOfJoining",
+      "type": "long",
+      "logicalType": "timestamp-millis"
+    },
+    {
+      "name": "confirmationStatus",
+      "type": "boolean"
+    },
+    {
+      "name": "phoneNums",
+      "type": {
+        "type": "array",
+        "items": "string"
+      }
+    },
+    {
+      "name": "project",
+      "type": "Project"
+    }
+  ]
+}
